@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | Cinematic Productions</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>CINEMATIC <span>PRODUCTIONS</span></h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-header">
+      <h2>Contact Us</h2>
+    </section>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p>We’d love to hear from you — whether you’re applying, pitching a project, or just saying hello.</p>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:hr@cinematicpro.com">hr@cinematicpro.com</a></li>
+          <li><strong>Phone:</strong> (323) 555-0198</li>
+          <li><strong>Address:</strong> 123 Film Lane, Los Angeles, CA 90028</li>
+        </ul>
+      </div>
+
+      <form class="contact-form" id="generalContact">
+        <label>Name *</label>
+        <input type="text" name="name" required />
+
+        <label>Email *</label>
+        <input type="email" name="email" required />
+
+        <label>Subject</label>
+        <input type="text" name="subject" />
+
+        <label>Message *</label>
+        <textarea name="message" rows="5" required></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+        <div id="msg"></div>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Cinematic Productions. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('generalContact')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('msg').innerHTML = "📧 Sending...";
+      setTimeout(() => {
+        document.getElementById('msg').innerHTML = "✅ Message sent! We'll reply soon.";
+        e.target.reset();
+      }, 1500);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apply Now | Cinematic Productions</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>CINEMATIC <span>PRODUCTIONS</span></h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="form-section">
+      <h2>Job Application</h2>
+      <p id="role-display" style="text-align:center; color:#aaa;">Select a role from the homepage or reviews.</p>
+
+      <form id="jobApplication" enctype="multipart/form-data">
+        <input type="hidden" name="role" id="role-input" />
+
+        <label>Full Name *</label>
+        <input type="text" name="name" required />
+
+        <label>Email Address *</label>
+        <input type="email" name="email" required />
+
+        <label>Phone Number *</label>
+        <input type="tel" name="phone" required />
+
+        <label>Home Address *</label>
+        <input type="text" name="address" placeholder="123 Main St, City, State, ZIP" required />
+
+        <label>Date of Birth</label>
+        <input type="date" name="dob" />
+
+        <label>Emergency Contact Name</label>
+        <input type="text" name="emergencyName" />
+
+        <label>Emergency Contact Phone</label>
+        <input type="tel" name="emergencyPhone" />
+
+        <label>Applying For *</label>
+        <select name="role" required onchange="this.form['role-input'].value=this.value;">
+          <option value="">-- Select Role --</option>
+          <option value="Set PA">Set Production Assistant</option>
+          <option value="Office PA">Office Production Assistant</option>
+          <option value="Transportation PA">Transportation PA</option>
+          <option value="Camera PA">Camera Department PA</option>
+          <option value="Set Medic PA">Set Medic / Safety PA</option>
+        </select>
+
+        <label>Relevant Experience</label>
+        <textarea name="experience" rows="4" placeholder="Tell us about any film, event, or related experience..."></textarea>
+
+        <label>Availability *</label>
+        <input type="text" name="availability" placeholder="e.g., Full-time, Mon-Fri, Immediate" required />
+
+        <label>Upload Resume (PDF/DOC) *</label>
+        <input type="file" name="resume" accept=".pdf,.doc,.docx" required />
+        <small>Max 10MB</small>
+
+        <button type="submit" class="btn btn-large">Submit Application</button>
+      </form>
+
+      <div id="status-message"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Cinematic Productions. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/application.js"></script>
+</body>
+</html>
